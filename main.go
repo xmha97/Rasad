@@ -181,17 +181,17 @@ func main() {
 
 func doTesting() string {
 	sites := DefaultSites()
-	outText := "╭────┬──────────╮\n"
-	outText += "│  # │   name   │\n"
-	outText += "├────┼──────────┤\n"
+	outText := "╭────┬────────────────────────────────────────────╮\n"
+	outText += "│  # │                    name                    │\n"
+	outText += "├────┼────────────────────────────────────────────┤\n"
 	var index int = 0
 	for _, s := range sites {
 		index++
 		result := Test(s.Name, s.URL, 0)
-		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + fmt.Sprintf("%-60s", result) + " │\n"
+		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + fmt.Sprintf("%-41s", result) + " │\n"
 	}
-	outText += "├────┼──────────┤\n"
-	outText += "│  # │   name   │\n"
-	outText += "╰────┴──────────╯\n"
+	outText += "├────┼────────────────────────────────────────────┤\n"
+	outText += "│  # │                    name                    │\n"
+	outText += "╰────┴────────────────────────────────────────────╯\n"
 	return outText
 }
