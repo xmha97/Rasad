@@ -179,14 +179,14 @@ func main() {
 }
 
 func doTesting() string {
-	sites := checker.DefaultSites()
+	sites := DefaultSites()
 	outText := "╭────┬──────────╮\n"
 	outText += "│  # │   name   │\n"
 	outText += "├────┼──────────┤\n"
 	var index int = 0
 	for _, s := range sites {
 		index++
-		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + checker.Test(sites.Name,sites.URL,0) "\n"
+		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + Test(sites.Name,sites.URL,0) "\n"
 	}
 	outText += "├────┼──────────┤\n"
 	outText += "│  # │   name   │\n"
