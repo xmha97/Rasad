@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"net/http"
 	"strconv"
 	"strings"
+	"time"
 )
 
 //TIP <p>To run your code, right-click the code and select <b>Run</b>.</p> <p>Alternatively, click
@@ -186,7 +186,7 @@ func doTesting() string {
 	var index int = 0
 	for _, s := range sites {
 		index++
-		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + Test(sites.Name,sites.URL,0) "\n"
+		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + Test(s.Name, s.URL, 0) + "\n"
 	}
 	outText += "├────┼──────────┤\n"
 	outText += "│  # │   name   │\n"
