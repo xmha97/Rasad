@@ -88,7 +88,7 @@ func DefaultSites() []Site {
 }
 
 func Test(name string, url string, count int) string {
-	fmt.Printf(name + "                        ")
+	fmt.Printf("%s", name+"                        ")
 	outText := ""
 	count++
 	req, err := http.NewRequest("GET", url, nil)
@@ -154,7 +154,7 @@ func main() {
 			for _, r := range spinner {
 				select {
 				case <-done:
-					fmt.Printf("\r" + printData)
+					fmt.Printf("%s", "\r"+printData)
 					return
 				default:
 					fmt.Printf("\r%s Testing ", string(r))
