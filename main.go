@@ -177,6 +177,7 @@ func main() {
 	printData = doTesting()
 	done <- true
 	time.Sleep(100 * time.Millisecond)
+	fmt.Scanln()
 }
 
 func doTesting() string {
