@@ -59,7 +59,6 @@ func DefaultSites() []Site {
 		{Name: "WhatsApp (Shorten)", URL: "https://wa.me/"},
 		{Name: "Messenger (Site)", URL: "https://www.messenger.com/"},
 		{Name: "Messenger (Shorten)", URL: "https://m.me/"},
-		{Name: "ChatGPT (Site)", URL: "https://chatgpt.com/"},
 		{Name: "Instagram (Site)", URL: "https://www.instagram.com/"},
 		{Name: "Facebook (Site)", URL: "https://www.facebook.com/"},
 		{Name: "Facebook (Shorten com)", URL: "https://www.fb.com/"},
