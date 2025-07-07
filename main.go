@@ -141,7 +141,7 @@ func handleError(name string, url string, count int, err error) string {
 	case strings.Contains(msg, "TLS handshake timeout"):
 		outText += "❌ " + name + "|" + "Timeout"
 		if count < 3 {
-			Test(name, url, count)
+			return Test(name, url, count)
 		}
 	case strings.Contains(msg, "forcibly closed"):
 		outText += "❌ " + name + "|" + "Blocked:" + "Closed"
@@ -176,6 +176,7 @@ func main() {
 
 	printData = doTesting()
 	done <- true
+	time.Sleep(100 * time.Millisecond)
 }
 
 func doTesting() string {
@@ -186,7 +187,8 @@ func doTesting() string {
 	var index int = 0
 	for _, s := range sites {
 		index++
-		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + Test(s.Name, s.URL, 0) + "\n"
+		result := Test(s.Name, s.URL, 0)
+		outText += "│ " + fmt.Sprintf("%2d", index) + " │ " + fmt.Sprintf("%-60s", result) + " │\n"
 	}
 	outText += "├────┼──────────┤\n"
 	outText += "│  # │   name   │\n"
